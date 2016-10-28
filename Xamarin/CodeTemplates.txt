@@ -1,0 +1,38 @@
+In Xamarin Studio open the settings menu:
+
+Windows: Tools > Options
+OS X: Xamarin Studio > Preferences
+Navigate To Text Editor -> Code Templates
+
+Here you can edit snippets that come with Xamarin studio as well as add new ones. For syntax I'd recommend just looking at one of the already present properties.
+
+E.g. default property looks like this:
+
+public $type$ $name$ {
+    get;
+    set;
+}
+You could change that to be one line:
+
+prop:
+=====
+public $type$ $name$ { get; set; }
+
+
+propb:
+======
+private $type$ _$name$;
+public $type$ $name$ {
+    get { return _$name$; } 
+    set { _$name$ = value; }
+}
+
+
+propo:
+======
+private $type$ _$name$;
+public $type$ $name$ {
+    get { return _$name$; } 
+    set { SetProperty(ref _$name$, value); }
+}
+
